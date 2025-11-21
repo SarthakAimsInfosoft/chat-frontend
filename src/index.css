@@ -89,3 +89,25 @@ body {
 .auth-link:hover {
   text-decoration: underline;
 }
+
+/* Auth card responsive */
+@media (max-width: 480px) {
+  .auth-card {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .auth-card input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .auth-btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .auth-title {
+    font-size: 24px;
+  }
+}

@@ -17,7 +17,7 @@ export default function Chat({ username }) {
     let ws;
 
     function connect() {
-      ws = new WebSocket(`wss://https://python-chatapp-xiny.onrender.com/ws/${username}`);
+      ws = new WebSocket(`wss://python-chatapp-xiny.onrender.com/ws/${username}`);
 
       ws.onopen = () => console.log("WS Connected");
 
