@@ -186,6 +186,41 @@ body {
   touch-action: manipulation;
 }
 
+.logout-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+.logout-btn:active {
+  transform: scale(0.95);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logout-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 
 /* Animations */
 @keyframes fadeIn {

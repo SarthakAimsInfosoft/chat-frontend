@@ -128,7 +128,17 @@ export default function Chat({ username }) {
       {/* Chat Area */}
       <div className="chat-container">
         <div className="chat-header">
-          {receiver ? receiver : "Select user to chat"}
+          <span>{receiver ? receiver : "Select user to chat"}</span>
+
+          <button
+            className="logout-btn"
+            onClick={() => {
+              socketRef.current?.close();
+              window.location.reload(); // Quick logout redirect
+            }}
+          >
+            Logout
+          </button>
         </div>
 
         <div className="messages">
