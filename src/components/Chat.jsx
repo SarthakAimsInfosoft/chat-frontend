@@ -106,6 +106,15 @@ export default function Chat({ username }) {
     setMessage("");
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+    socketRef.current?.close();
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 200);
+  };
+
   return (
     <div className="chat-wrapper">
       {/* Sidebar: Online Users */}
@@ -128,22 +137,27 @@ export default function Chat({ username }) {
       {/* Chat Area */}
       <div className="chat-container">
         <div className="chat-header">
-          <span>{receiver ? receiver : "Select user to chat"}</span>
-
           <button
             className="toggle-users-btn"
             onClick={() => {
-              document.querySelector(".sidebar").classList.toggle("open");
+              const sidebar = document.querySelector(".sidebar");
+              sidebar?.classList.toggle("open");
             }}
           >
             ☰
           </button>
 
-          <button className="logout-btn" onClick={handleLogout}>
+          <span className="chat-title">
+            {receiver ? receiver : "Select user to chat"}
+          </span>
+
+          <button 
+            className="logout-btn" 
+            onClick={handleLogout}
+          >
             Logout
           </button>
         </div>
-
 
         <div className="messages">
           {messages
