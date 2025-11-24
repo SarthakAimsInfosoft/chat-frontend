@@ -133,9 +133,12 @@ export default function Chat({ username }) {
           <button
             className="logout-btn"
             onClick={() => {
+              localStorage.clear()
               socketRef.current?.close();
-              window.location.reload(); // Quick logout redirect
-            }}
+              setTimeout(() => {
+                  window.location.reload();
+                }, 200);
+              }}
           >
             Logout
           </button>
