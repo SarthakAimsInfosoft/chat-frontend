@@ -131,18 +131,19 @@ export default function Chat({ username }) {
           <span>{receiver ? receiver : "Select user to chat"}</span>
 
           <button
-            className="logout-btn"
+            className="toggle-users-btn"
             onClick={() => {
-              localStorage.clear()
-              socketRef.current?.close();
-              setTimeout(() => {
-                  window.location.reload();
-                }, 200);
-              }}
+              document.querySelector(".sidebar").classList.toggle("open");
+            }}
           >
+            ☰
+          </button>
+
+          <button className="logout-btn" onClick={handleLogout}>
             Logout
           </button>
         </div>
+
 
         <div className="messages">
           {messages
